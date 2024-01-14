@@ -1,85 +1,39 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
 
 /**
- * j - converts a string to an integer
- * @s: string to be converted
- *
- * Return: the int converted from the string
- */
-int _j(char *s)
-{
-	int i, d, n, len, f, digit;
-
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
-	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
-		}
-		i++;
-	}
-
-	if (f == 0)
-		return (0);
-
-	return (n);
-}
-
-/**
- * main - adds two positive number
+ * main - program that adds positive numbers.
  * @argc: number of arguments
- * @argv: array of arguents
+ * @argv: array with the arguments
  *
- * Return: 0 (Success), or 1 (Success)
- */
+ * Return: always 0
+ **/
+
 int main(int argc, char *argv[])
 {
-	int sum, num, i, j, k;
+	int i, suma = 0, res = 0;
+	char c[] = "Error", *find_letter;
 
-	sum = 0;
-
-	for (i = 1; i < argc; i++)
+	if (argc > 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (argv[i][j] > '9' || argv[i][j] < '0')
+			find_letter = argv[i];
+			while (*find_letter != 0)
 			{
-				puts("Error");
-				return (1);
+				if (*find_letter < 47 || *find_letter > 57)
+				{
+					printf("%s\n", c);
+					return (1);
+				}
+				find_letter++;
 			}
+			res = atoi(argv[i]);
+			suma += res;
 		}
+		printf("%d\n", suma);
 	}
-
-	for (k = 1; k < argc; k++)
-	{
-		num = _j(argv[k]);
-		if (num >= 0)
-		{
-			sum += num;
-		}
-	}
-
-	printf("%d\n", sum);
+	else
+		printf("%d\n", 0);
 	return (0);
 }
