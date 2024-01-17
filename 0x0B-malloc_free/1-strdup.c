@@ -7,7 +7,7 @@
  * @str: the original string
  *
  * Return: returns a pointer to the repeated string.
- * It 
+ * It shows
  */
 char *_strdup(char *str)
 {
