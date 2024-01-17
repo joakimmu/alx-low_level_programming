@@ -2,9 +2,8 @@
 #include "main.h"
 
 /**
- * create_array - create an array of chars
-  * @c: size of one unit
- *
+ * @size: number of elements
+ * @c: size of one unit
  * Return: char
  */
 char *create_array(unsigned int size, char c)
