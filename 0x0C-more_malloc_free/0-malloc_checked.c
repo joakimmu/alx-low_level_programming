@@ -1,19 +1,20 @@
+/*
+ * 0x0C. C - More malloc, free
+ * task 0
+ */
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
- * malloc_checked - function that allocates memory using malloc.
- * @b: input
- * Return: output
+ * malloc_checked - allocates memory using malloc.
+ * @b: array size
+ * Return: array refrance or NULL
  */
 void *malloc_checked(unsigned int b)
 {
-	int *ar;
+	void *p;
 
-	ar = malloc(b);
-	if (ar == NULL)
-	{
+	p =  malloc(b);
+	if (p == NULL)
 		exit(98);
-	}
-	return (ar);
+	return (p);
 }
