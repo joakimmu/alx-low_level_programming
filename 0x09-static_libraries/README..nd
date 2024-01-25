@@ -1,2 +1,0 @@
-A library is not a luxury but one of the necessities of life  | static library libholberton.a containing all the functions listed |
-Without libraries what have we? | script called create_static_lib.sh that creates a static library called liball.a from all the .c file
