@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * print_binary 
- * @n: number to print in binary
+ * print_binary - prints a number in binary notation
+ * @n: number to print
+ *
+ * Return: void
  */
 void print_binary(unsigned long int n)
 {
@@ -18,10 +20,10 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 			zx++;
 		}
-		else if (sasa)
+		else if (zx)
 			_putchar('0');
 	}
-	if (!sasa)
+	if (!zx)
 		_putchar('0');
 }
 
