@@ -1,44 +1,50 @@
 #include "main.h"
 
 /**
- * raise- calculates the result of raising a number to an exponential
- * @natu the number of the exponent
- * @expo: raised to
+ * expo - calculates the result of raising a number to an exponential
+ * @number: the number of the exponent
+ * @exponential: raised to
  *
- * Return: value of (natu ^ expo)
+ * Return: the result of number raised to the exponential
  */
-unsigned long int _pow(unsigned int natu, unsigned int expo)
-{
-	unsigned long int siju;
-	unsigned int k;
 
-	siju = 1;
-	for (k = 1; k <= expo; k++)
-		siju *= natu;
-	return (siju);
+unsigned long int _pow(unsigned int base, unsigned int power)
+{
+	unsigned long int num;
+	unsigned int a;
+
+	num = 1;
+	for (a = 1; a <= power; a++)
+		num *= base;
+	return (num);
 }
 
-
+/**
+ * print_binary - prints a number in binary notation
+ * @n: number to print
+ *
+ * Return: void
+ */
 void print_binary(unsigned long int n)
 {
-	unsigned long int gawa, gawa_2;
-	char gawa_3;
+	unsigned long int divisor, check;
+	char flag;
 
-	gawa_3 = 0;
-	gawa = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (gawa != 0)
+	flag = 0;
+	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
+	while (divisor != 0)
 	{
-		gawa_2 = n & gawa;
-		if (gawa_2 == gawa)
+		check = n & divisor;
+		if (check == divisor)
 		{
-			gawa_3 = 1;
+			flag = 1;
 			_putchar('1');
 		}
-		else if (gawa_3 == 1 || gawa == 1)
+		else if (flag == 1 || divisor == 1)
 		{
 			_putchar('0');
 		}
-		gawa >>= 1;
+		divisor >>= 1;
 	}
 }
 
