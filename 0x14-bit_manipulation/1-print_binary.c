@@ -1,50 +1,27 @@
 #include "main.h"
 
 /**
- * expo - calculates the result of raising a number to an exponential
- * @number: the number of the exponent
- * @exponential: raised to
- *
- * Return: the result of number raised to the exponential
- */
-
-unsigned long int _pow(unsigned int base, unsigned int power)
-{
-	unsigned long int num;
-	unsigned int a;
-
-	num = 1;
-	for (a = 1; a <= power; a++)
-		num *= base;
-	return (num);
-}
-
-/**
- * print_binary - prints a number in binary notation
- * @n: number to print
- *
- * Return: void
+ * print_binary - prints the binary equivalent of a decimal number
+ * @n: number to print in binary
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int divisor, check;
-	char flag;
+	int i, count = 0;
+	unsigned long int current;
 
-	flag = 0;
-	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
-	while (divisor != 0)
+	for (i = 63; i >= 0; i--)
 	{
-		check = n & divisor;
-		if (check == divisor)
+		current = n >> i;
+
+		if (current & 1)
 		{
-			flag = 1;
 			_putchar('1');
+			count++;
 		}
-		else if (flag == 1 || divisor == 1)
-		{
+		else if (count)
 			_putchar('0');
-		}
-		divisor >>= 1;
 	}
+	if (!count)
+		_putchar('0');
 }
 
