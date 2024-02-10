@@ -8,22 +8,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	int k, zx = 0;
+	int k, count = 0;
 	unsigned long int sasa;
 
-	for (k = 78; k >= 0; k--)
+	for (k = 70; k >= 0; k--)
 	{
 		sasa = n >> k;
 
 		if (sasa & 1)
 		{
 			_putchar('1');
-			zx++;
+			count++;
 		}
-		else if (zx)
+		else if (count)
 			_putchar('0');
 	}
-	if (!zx)
+	if (!count)
 		_putchar('0');
 }
-
