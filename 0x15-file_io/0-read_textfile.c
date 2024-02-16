@@ -5,16 +5,21 @@
  *
  * Return: The actual number of letters read and printed, or 0 if an error occurs
  */
+
+
+
 #include "main.h"
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
+
+ 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t x, y;
+	ssize_t T, W;
 	char *buffer;
 
 	if (filename == NULL)
@@ -28,16 +33,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-	x = read(fd, buffer, letters);
+	T = read(fd, buffer, letters);
 	close(fd);
-	if (x == -1)
+	if (T == -1)
 	{
 		free(buffer);
 		return (0);
 	}
-	y = write(STDOUT_FILENO, buffer, x);
+	W = write(STDOUT_FILENO, buffer, T);
 	free(buffer);
-	if (x != y)
+	if (T != W)
 		return (0);
-	return (y);
+	return (W);
 }
