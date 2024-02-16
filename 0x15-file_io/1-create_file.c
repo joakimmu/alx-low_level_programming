@@ -3,15 +3,15 @@
 /**
  * create_file - creates a file
  * @filename: name of the file.
- * @text_content: content appended .
+ * @text_content: text appended .
  *
- * Return: 1 if it is succesiful.
+ * Return: 1  is succesiful.
  */
 int create_file(const char *filename, char *text_content)
 {
 	int ac;
 	int jkm;
-	int rwr;
+	int PB;
 
 	if (!filename)
 		return (-1);
@@ -27,9 +27,9 @@ int create_file(const char *filename, char *text_content)
 	for (jkm = 0; text_content[jkm]; jkm++)
 		;
 
-	rwr = write(ac, text_content, jkm);
+	PB = write(ac, text_content, jkm);
 
-	if (rwr == -1)
+	if (PB == -1)
 		return (-1);
 
 	close(ac);
