@@ -13,7 +13,9 @@
  *              If filename is NULL, return -1.
  *              If text_content is NULL, create an empty file.
  */
+
 int create_file(const char *filename, char *text_content)
+
 {
 	int ac;
 	int nletters;
