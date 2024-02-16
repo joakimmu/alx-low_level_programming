@@ -1,21 +1,13 @@
 #include "main.h"
 
 /**
- * create_file - Creates a file with specified filename and writes text content
- * @filename: The name of the file to create
- * @text_content: The NULL-terminated string to write to the file
+ * create_file - creates a file
+ * @filename: name of the file.
+ * @text_content: content appended .
  *
- * Return: 1 on success, -1 on failure
- *         (file can not be created, file can not be written, write "fails", etc...)
- *
- * Description: The created file must have permissions rw-------.
- *              If the file already exists, truncate it.
- *              If filename is NULL, return -1.
- *              If text_content is NULL, create an empty file.
+ * Return: 1 if it is succesiful.
  */
-
 int create_file(const char *filename, char *text_content)
-
 {
 	int ac;
 	int nletters;
