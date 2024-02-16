@@ -3,21 +3,11 @@
 #include "main.h"
 
 /**
- * Implements a file-copying program adhering to Betty coding standards.
- *
- * **Description:**
- *     Copies the contents of FILE_FROM to FILE_TO, ensuring correct usage,
- *     error handling, and adherence to best practices.
- *
- * **Return Values:**
- *     - 0: Success
- *     - 97: Incorrect usage (missing or extra arguments)
- *     - 98: Error reading FILE_FROM
- *     - 99: Error writing to FILE_TO
- *     - 100: Error closing a file descriptor
- *
- * 
- */
+* main - program that copies the content of a file to another file
+* @argc: num argument
+* @argv: string argument
+* Return: 0
+*/
 
 int main(int argc, char *argv[])
 {
